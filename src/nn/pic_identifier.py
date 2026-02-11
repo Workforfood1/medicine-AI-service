@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+# Пока просто какой-то класс, базовый
 class MainModule(nn.Module):
     def __init__(self):
         super().__init__()
@@ -18,6 +19,3 @@ class MainModule(nn.Module):
         x = x.view(x.size(0), -1)  # Flatten the tensor
         x = self.last_layer(x)
         return x
-    
-
-
