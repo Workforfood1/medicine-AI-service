@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 import uvicorn 
 
+from api import all_routers
+
+
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+for router in all_routers:
+    app.include_router(router)
 
 
 if __name__ == "__main__":
